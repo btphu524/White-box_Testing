@@ -8,29 +8,24 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class TestPrime {
     @Test
-    public void testNegativeAndSmall() {
-        assertFalse(isPrime(-5));
-        assertFalse(isPrime(0));
-        assertFalse(isPrime(1));
+    public void testSmall() {
+        assertFalse(isPrime(1)); // L0
     }
 
     @Test
     public void testSmallPrimes() {
-        assertTrue(isPrime(2));
-        assertTrue(isPrime(3));
+        assertTrue(isPrime(2)); // L0
+        assertTrue(isPrime(5)); // L1
     }
 
     @Test
     public void testCompositeNumbers() {
-        assertFalse(isPrime(4));
-        assertFalse(isPrime(9));
-        assertFalse(isPrime(15));
+        assertFalse(isPrime(4)); // L1
+        assertFalse(isPrime(9)); // L2
     }
 
     @Test
     public void testLargePrimes() {
-        assertTrue(isPrime(17));
-        assertTrue(isPrime(23));
-        assertTrue(isPrime(97));
+        assertTrue(isPrime(17)); // L3
     }
 }

@@ -9,24 +9,24 @@ public class TestSumArray {
     @Test
     public void testEmptyArray() {
         int[] a = {};
-        assertEquals(-1, Sum(a, 0));
+        assertEquals(-1, Sum(a, 0)); // L0
     }
 
     @Test
     public void testSingleElement() {
-        int[] a = {5};
-        assertEquals(5, Sum(a, 1));
+        int[] a = {1};
+        assertEquals(1, Sum(a, 1)); // L1
     }
 
     @Test
-    public void testMultipleElements() {
-        int[] a = {1, 2, 3, 4, 5};
-        assertEquals(15, Sum(a, 5));
+    public void testMultipleElements1() {
+        int[] a = {1, 2};
+        assertEquals(3, Sum(a, 2)); // L2
     }
 
     @Test
-    public void testNegativeNumbers() {
-        int[] a = {-1, -2, 3};
-        assertEquals(0, Sum(a, 3));
+    public void testMultipleElements2() {
+        int[] a = {1, 2, 3, 4};
+        assertEquals(10, Sum(a, 4)); // L4 (k)
     }
 }

@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class TestFibonacci {
     @Test
     public void testNegative() {
-        assertEquals(-1, fibonacciArray(-5));
+        assertEquals(-1, fibonacciArray(-1));
     }
 
     @Test
@@ -28,8 +28,7 @@ public class TestFibonacci {
 
     @Test
     public void testLarger() {
-        assertEquals(5, fibonacciArray(5));
-        assertEquals(13, fibonacciArray(7));
-        assertEquals(55, fibonacciArray(10));
+        assertEquals(2, fibonacciArray(3));
+        assertEquals(3, fibonacciArray(4));
     }
 }

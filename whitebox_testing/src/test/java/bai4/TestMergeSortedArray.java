@@ -7,6 +7,42 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class TestMergeSortedArray {
     @Test
+    public void testNormalMerge1() {
+        int[] a = {1};
+        int[] b = {5};
+        int[] c = new int[2];
+        cal(a, 1, b, 1, c);
+        assertArrayEquals(new int[]{1, 5}, c);
+    }
+
+    @Test
+    public void testNormalMerge2() {
+        int[] a = {5};
+        int[] b = {2};
+        int[] c = new int[2];
+        cal(a, 1, b, 1, c);
+        assertArrayEquals(new int[]{2, 5}, c);
+    }
+
+    @Test
+    public void testSecondEmpty() {
+        int[] a = {1, 5};
+        int[] b = {};
+        int[] c = new int[2];
+        cal(a, 2, b, 0, c);
+        assertArrayEquals(new int[]{1, 5}, c);
+    }
+
+    @Test
+    public void testFirstEmpty() {
+        int[] a = {};
+        int[] b = {2, 7};
+        int[] c = new int[2];
+        cal(a, 0, b, 2, c);
+        assertArrayEquals(new int[]{2, 7}, c);
+    }
+
+    @Test
     public void testBothEmpty() {
         int[] a = {};
         int[] b = {};
@@ -14,36 +50,13 @@ public class TestMergeSortedArray {
         cal(a, 0, b, 0, c);
         assertArrayEquals(new int[]{}, c);
     }
+
     @Test
-    public void testFirstEmpty() {
-        int[] a = {};
-        int[] b = {2, 4, 6};
-        int[] c = new int[3];
-        cal(a, 0, b, 3, c);
-        assertArrayEquals(new int[]{2, 4, 6}, c);
-    }
-    @Test
-    public void testSecondEmpty() {
-        int[] a = {1, 3, 5};
-        int[] b = {};
-        int[] c = new int[3];
-        cal(a, 3, b, 0, c);
-        assertArrayEquals(new int[]{1, 3, 5}, c);
-    }
-    @Test
-    public void testNormalMerge1() {
-        int[] a = {1, 3, 5};
-        int[] b = {2, 4, 6};
+    public void testNormalMerge3() {
+        int[] a = {2, 5};
+        int[] b = {6, 8, 9, 10};
         int[] c = new int[6];
-        cal(a, 3, b, 3, c);
-        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, c);
-    }
-    @Test
-    public void testNormalMerge2() {
-        int[] a = {2, 4, 6};
-        int[] b = {1, 3, 5};
-        int[] c = new int[6];
-        cal(a, 3, b, 3, c);
-        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, c);
+        cal(a, 2, b, 4, c);
+        assertArrayEquals(new int[]{2, 5, 6, 8, 9, 10}, c);
     }
 }

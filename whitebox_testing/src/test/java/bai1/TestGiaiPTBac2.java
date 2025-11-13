@@ -16,7 +16,7 @@ public class TestGiaiPTBac2 {
     @Test
     public void testVoNghiemBacNhat() {
         // a = 0, b = 0, c != 0
-        assertEquals("Vô nghiệm", solve(0, 0, 5));
+        assertEquals("Vô nghiệm", solve(0, 0, 2));
     }
 
     @Test
@@ -28,7 +28,7 @@ public class TestGiaiPTBac2 {
     @Test
     public void testVoNghiemBacHai() {
         // delta < 0
-        assertEquals("Vô nghiệm", solve(1, 1, 1));
+        assertEquals("Vô nghiệm", solve(2, 2, 2));
     }
 
     @Test
